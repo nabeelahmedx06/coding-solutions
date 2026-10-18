@@ -2,18 +2,19 @@
 #include <stdio.h>
 
 int main() {
-    int n;
-    scanf("%d", &n);
+    char str[1000];
 
-    int arr[n];
+    scanf("%[^\n]", str);
 
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == ' ') {
+            printf("\n");
+        } else {
+            printf("%c", str[i]);
+        }
     }
 
-    for (int i = n - 1; i >= 0; i--) {
-        printf("%d ", arr[i]);
-    }
+    printf("\n");
 
     return 0;
 }
